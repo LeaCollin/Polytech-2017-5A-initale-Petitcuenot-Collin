@@ -9,14 +9,14 @@
         android:id="@+id/equipe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Equipe : B"
+        android:text="@string/team"
         android:layout_alignParentLeft="true"
         />
     <TextView
         android:id="@+id/joueur"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Joueur: Lucie"
+        android:text="@string/player"
         android:layout_below="@id/equipe"
         android:layout_alignParentLeft="true"
         />
@@ -24,7 +24,7 @@
         android:id="@+id/vies"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Vies : 3"
+        android:text="@string/life"
         android:layout_alignParentRight="true"
 
         />
@@ -32,7 +32,7 @@
         android:id="@+id/score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="score / 18"
+        android:text="@string/score"
         android:layout_alignParentRight="true"
         android:layout_below="@id/vies"
         />
