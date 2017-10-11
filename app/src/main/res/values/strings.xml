@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">PolytechAndroid1</string>
+    <string name="app_name">PolyQuizz</string>
+    <string name="offline">Offline</string>
+    <string name="online">Online</string>
+    <string name="One_vs_One">One vs One</string>
+    <string name="One_vs_IA">One vs IA</string>
+    <string name="TeamA_vs_TeamB">Team A vs Team B</string>
+    <string name="OnevsOneOnline">1 Vs 1 Online</string>
 </resources>
