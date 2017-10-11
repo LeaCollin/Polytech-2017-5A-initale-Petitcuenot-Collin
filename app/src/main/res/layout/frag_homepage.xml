@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fragmentHome">
 
     <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:padding="10dp"
        >
 
@@ -22,12 +24,15 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_below="@id/offline">
+
             <Button
                 android:id="@+id/OnevsIA"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/One_vs_IA"
                 android:layout_weight = "1"
+                android:onClick="goToQuestion"
+                android:layout_marginRight="5dp"
                 />
 
             <Button
@@ -36,6 +41,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/One_vs_One"
                 android:layout_weight = "1"
+                android:layout_marginLeft="5dp"
                 />
 
         </LinearLayout>
@@ -45,7 +51,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/TeamA_vs_TeamB"
-            android:layout_below="@+id/but_1"/>
+            android:layout_below="@+id/but_1"
+            android:layout_marginTop="10dp"/>
 
         <LinearLayout
             android:layout_width="fill_parent"
