@@ -1,13 +1,19 @@
 package com.example.leamelanie.polytechandroid1;
 
+import android.app.ActionBar;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,6 +30,36 @@ public class MainActivity extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.fragment, homePage).commit();
         }
+    }
+
+    //ActionBar
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    //click on action of the actionBar
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.action_save:
+                save();
+                return true;
+            case R.id.action_settings:
+                return true;
+            case android.R.id.home:
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    //Action "Save"
+    private void save(){
+        Toast.makeText(this,R.string.save_app,Toast.LENGTH_LONG).show();
     }
 
     private void showFragment(final Fragment fragment) {

@@ -10,5 +10,6 @@
     <string name="life">Vie(s) :</string>
     <string name="player">Joueur :</string>
     <string name="team">Equipe :</string>
+    <string name="save_app">Save</string>
 
 </resources>
