@@ -1,62 +1,50 @@
 package com.example.leamelanie.polytechandroid1;
 
 import android.graphics.Color;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    private final QuestionFormFrag questionFrom = new QuestionFormFrag();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-        Button button = (Button) findViewById(R.id.buttonPDG);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MainActivity.this.onClick(v);
-            }
-        });
+
+        if (findViewById(R.id.fragment) != null) {
+            final HomepageFrag homePage = new HomepageFrag();
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.fragment, homePage).commit();
+        }
     }
 
-    public void onClick(View v){
-        setContentView(R.layout.question_form); //FRAGMENTS VOIR TP D'après NE PAS FAIRE
-        //FONCTION POUR INTIALISER LA DEUXIEME VUE
-        Button button1 = (Button) findViewById(R.id.button1);
-        Button button2 = (Button) findViewById(R.id.button2);
-        Button button3 = (Button) findViewById(R.id.button3);
-        Button button4 = (Button) findViewById(R.id.button4);
+    private void showFragment(final Fragment fragment) {
+        if (fragment == null) {
+            return;
+        }
 
-        button1.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                v.setBackgroundColor(Color.RED);
-            }
-        });
+        // Begin a fragment transaction.
+        final FragmentManager fm = getSupportFragmentManager();
+        final FragmentTransaction ft = fm.beginTransaction();
+        // We can also animate the changing of fragment.
+        ft.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+        // Replace current fragment by the new one.
+        ft.replace(R.id.fragment, fragment);
 
-        button2.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                v.setBackgroundColor(Color.RED);
-            }
-        });
 
-        button3.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                v.setBackgroundColor(Color.RED);
-            }
-        });
+        // Commit changes.
+        ft.commit();
+    }
 
-        button4.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                v.setBackgroundColor(Color.RED);
-            }
-        });
+    public void goToQuestion(View v) {
+        showFragment(this.questionFrom);
     }
 }

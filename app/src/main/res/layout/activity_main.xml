@@ -8,79 +8,15 @@
     android:paddingLeft="10dp"
     android:paddingRight="10dp"
     android:paddingTop="20dp"
-    android:paddingBottom="20dp">
+    android:paddingBottom="20dp"
+    android:id="@+id/main">
 
-    <RelativeLayout
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/fragment"
         android:layout_width="348dp"
         android:layout_height="455dp"
         tools:layout_editor_absoluteY="8dp"
         tools:layout_editor_absoluteX="8dp"
-        tools:ignore="MissingConstraints">
-
-        <TextView
-            android:id="@+id/offline"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/offline"
-            android:padding="10dp"/>
-
-        <LinearLayout
-            android:id="@+id/but_1"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_below="@id/offline">
-            <Button
-                android:id="@+id/OnevsIA"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/One_vs_IA"
-                android:layout_weight = "1"
-                />
-
-            <Button
-                android:id="@+id/OnevsOne"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/One_vs_One"
-                android:layout_weight = "1"
-                />
-
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/team_A_vs_Team_B"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/TeamA_vs_TeamB"
-            android:layout_below="@+id/but_1"/>
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_below="@id/team_A_vs_Team_B"
-            android:paddingTop="100dp">
-
-            <TextView
-                android:id="@+id/online"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/online"
-                android:padding="10dp"/>
-
-
-            <Button
-                android:id="@+id/one_vs_one_online"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/OnevsOneOnline"
-                />
-        </LinearLayout>
-
-
-
-
-    </RelativeLayout>
+        />
 
 </android.support.constraint.ConstraintLayout>
