@@ -30,8 +30,10 @@ public class QuestionFormFrag extends Fragment {
         @Override
         public void onReceive(Context context, Intent intent) {
             String myQuestion = intent.getStringExtra(MyIntentService.QUESTION);
-            TextView textViewQuestion = getActivity().findViewById(R.id.question);
-            textViewQuestion.setText(myQuestion);
+            if (!(myQuestion == null)) {
+                TextView textViewQuestion = getActivity().findViewById(R.id.question);
+                textViewQuestion.setText(myQuestion);
+            }
 
             Boolean myAnswer = intent.getBooleanExtra(MyIntentService.ANSWER, false);
             TextView textViewScore = getActivity().findViewById(R.id.score);

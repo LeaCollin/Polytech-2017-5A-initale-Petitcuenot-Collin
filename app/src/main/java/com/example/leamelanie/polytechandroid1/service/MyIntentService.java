@@ -26,14 +26,15 @@ public class MyIntentService extends IntentService {
     protected void onHandleIntent(Intent intent) {
         String myTask = intent.getStringExtra(TASK);
 
-        if (myTask == "questionA") {
+        if (myTask.equals("questionA")) {
             Intent broadcastIntent = new Intent();
             broadcastIntent.setAction(QuestionFormFrag.MyReceiver.ACTION_RESP);
             broadcastIntent.addCategory(Intent.CATEGORY_DEFAULT);
             broadcastIntent.putExtra(QUESTION, nextQuestion);
             sendBroadcast(broadcastIntent);
         }
-        else if(myTask == "Le Chien"){
+
+        else if(myTask.equals("Le Chien")){
             Intent broadcastIntent = new Intent();
             broadcastIntent.setAction(QuestionFormFrag.MyReceiver.ACTION_RESP);
             broadcastIntent.addCategory(Intent.CATEGORY_DEFAULT);
