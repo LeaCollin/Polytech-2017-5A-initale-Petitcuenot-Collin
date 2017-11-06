@@ -15,6 +15,10 @@
     <string name="namePlayer">Lucie</string>
     <string name="nbLifes">2</string>
     <string name="scorePlayer">0</string>
+    <string name="rep1">Lionel</string>
+    <string name="rep2">Léo</string>
+    <string name="rep3">Léonard</string>
+    <string name="rep4">Lilou</string>
 
 
 </resources>

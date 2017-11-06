@@ -22,9 +22,17 @@ import com.example.leamelanie.polytechandroid1.service.MyIntentService;
 
 public class QuestionFormFrag extends Fragment {
 
+    private MyReceiver receiver;
+    int score = 5;
+    public Button butAnswer1 = null;
+    public Button butAnswer2 = null;
+    public Button butAnswer3 = null;
+    public Button butAnswer4 = null;
+
     public class MyReceiver extends BroadcastReceiver {
 
         public static final String ACTION_RESP = "actionResp";
+
 
 
         @Override
@@ -35,13 +43,39 @@ public class QuestionFormFrag extends Fragment {
                 textViewQuestion.setText(myQuestion);
             }
 
-            Boolean myAnswer = intent.getBooleanExtra(MyIntentService.ANSWER, false);
-            TextView textViewScore = getActivity().findViewById(R.id.score);
-            if (myAnswer){
-                textViewScore.setText("1");
+            String answers1 = intent.getStringExtra(MyIntentService.ANSWERS);
+            if (!(answers1 == null)) {
+                TextView textViewmyAnswer1= getActivity().findViewById(R.id.button1);
+                textViewmyAnswer1.setText(myQuestion);
             }
-            else {
-                textViewScore.setText("-1");
+
+            String answers2 = intent.getStringExtra(MyIntentService.ANSWERS);
+            if (!(answers2 == null)) {
+                TextView textViewmyAnswer2 = getActivity().findViewById(R.id.button2);
+                textViewmyAnswer2.setText(myQuestion);
+            }
+
+            String answers3 = intent.getStringExtra(MyIntentService.ANSWERS);
+            if (!(answers3 == null)) {
+                TextView textViewmyAnswer3 = getActivity().findViewById(R.id.button3);
+                textViewmyAnswer3.setText(myQuestion);
+            }
+
+            String answers4 = intent.getStringExtra(MyIntentService.ANSWERS);
+            if (!(answers4 == null)) {
+                TextView textViewmyAnswer4 = getActivity().findViewById(R.id.button4);
+                textViewmyAnswer4.setText(myQuestion);
+            }
+
+            Boolean myAnswer = intent.getBooleanExtra(MyIntentService.ANSWER, false);
+            TextView textViewScore = getActivity().findViewById(R.id.scorePlayer);
+            if (myAnswer){
+                score ++;
+                textViewScore.setText(""+score);
+            }
+            else{
+                score--;
+                textViewScore.setText(""+score);
 
             }
 
@@ -49,12 +83,7 @@ public class QuestionFormFrag extends Fragment {
         }
     }
 
-    private MyReceiver receiver;
-    public int score = 0;
-    public Button butAnswer1 = null;
-    public Button butAnswer2 = null;
-    public Button butAnswer3 = null;
-    public Button butAnswer4 = null;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -69,7 +98,7 @@ public class QuestionFormFrag extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        TextView textViewMyScore = getActivity().findViewById(R.id.score);
+        TextView textViewMyScore = getActivity().findViewById(R.id.scorePlayer);
         textViewMyScore.setText(String.valueOf(score));
         butAnswer1 = getActivity().findViewById(R.id.button1);
         butAnswer2 = getActivity().findViewById(R.id.button2);
@@ -80,6 +109,15 @@ public class QuestionFormFrag extends Fragment {
 
         Intent myIntent = new Intent(getActivity(), MyIntentService.class);
         myIntent.putExtra(MyIntentService.TASK, "questionA");
+        getActivity().startService(myIntent);
+
+        myIntent.putExtra(MyIntentService.TASK, "answer1");
+        getActivity().startService(myIntent);
+        myIntent.putExtra(MyIntentService.TASK, "answer2");
+        getActivity().startService(myIntent);
+        myIntent.putExtra(MyIntentService.TASK, "answer3");
+        getActivity().startService(myIntent);
+        myIntent.putExtra(MyIntentService.TASK, "answer4");
         getActivity().startService(myIntent);
 
         Button.OnClickListener answerListener = new Button.OnClickListener() {

@@ -101,7 +101,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="150dp"
                 android:layout_weight="1"
-                android:text="Le Chien"
+                android:text="@string/rep1"
                 android:textSize="18sp" />
 
             <Button
@@ -110,7 +110,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="150dp"
                 android:layout_weight="1"
-                android:text="Le Chat"
+                android:text="@string/rep2"
                 android:textSize="18sp" />
         </LinearLayout>
 
@@ -128,7 +128,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="150dp"
                 android:layout_weight="1.1"
-                android:text="Le loup"
+                android:text="@string/rep3"
                 android:onClick="goToQuestion"
                 android:textSize="18sp" />
 
@@ -138,7 +138,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="150dp"
                 android:layout_weight="1"
-                android:text="Le lapin"
+                android:text="@string/rep4"
                 android:textSize="18sp" />
         </LinearLayout>
     </RelativeLayout>
