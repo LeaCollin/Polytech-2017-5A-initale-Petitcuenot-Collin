@@ -21,6 +21,14 @@
             />
 
         <TextView
+            android:id="@+id/nomEquipe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nameTeam"
+            android:layout_toRightOf="@id/equipe"
+            />
+
+        <TextView
             android:id="@+id/joueur"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -30,10 +38,27 @@
             />
 
         <TextView
+            android:id="@+id/nomJoueur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/namePlayer"
+            android:layout_below="@id/equipe"
+            android:layout_toRightOf="@id/joueur"
+            />
+
+        <TextView
             android:id="@+id/vies"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/life"
+            android:layout_toLeftOf="@id/nbVies"
+            />
+
+        <TextView
+            android:id="@+id/nbVies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nbLifes"
             android:layout_alignParentRight="true"
             />
 
@@ -42,8 +67,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/score"
-            android:layout_alignParentRight="true"
             android:layout_below="@id/vies"
+            android:layout_toLeftOf="@id/scorePlayer"
+            />
+
+        <TextView
+            android:id="@+id/scorePlayer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/scorePlayer"
+            android:layout_below="@id/vies"
+            android:layout_alignParentRight="true"
             />
 
         <TextView

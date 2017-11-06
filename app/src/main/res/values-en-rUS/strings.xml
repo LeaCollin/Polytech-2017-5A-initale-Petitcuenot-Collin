@@ -11,4 +11,11 @@
     <string name="life">Life(s) :</string>
     <string name="player">Player :</string>
     <string name="team">Team :</string>
+    <string name="save_app">Save</string>
+    <string name="nameTeam">LC17</string>
+    <string name="namePlayer">Lucie</string>
+    <string name="nbLifes">2</string>
+    <string name="scorePlayer">0</string>
+
+
 </resources>
