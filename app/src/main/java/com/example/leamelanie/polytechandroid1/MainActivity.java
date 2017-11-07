@@ -1,12 +1,9 @@
 package com.example.leamelanie.polytechandroid1;
 
-import android.app.ActionBar;
 import android.content.Intent;
-import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -17,6 +14,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     private final QuestionFormFrag questionFrom = new QuestionFormFrag();
+    private final BeerFrag beerFrag = new BeerFrag();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,5 +79,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void goToQuestion(View v) {
         showFragment(this.questionFrom);
+    }
+    public void goToBeer(View v) {
+        showFragment(this.beerFrag);
     }
 }

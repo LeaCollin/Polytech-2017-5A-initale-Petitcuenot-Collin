@@ -16,6 +16,6 @@
     <string name="namePlayer">Lucie</string>
     <string name="nbLifes">2</string>
     <string name="scorePlayer">0</string>
-
-
+    <string name="nomAlc">Name</string>
+    <string name="alcool">% Alcohol</string>
 </resources>
