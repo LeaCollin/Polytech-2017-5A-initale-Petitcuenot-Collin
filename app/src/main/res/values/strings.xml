@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">PolyQuizz</string>
     <string name="offline">Mode hors-ligne</string>
-    <string name="online">Mode en ligne</string>
+    <string name="liste">Liste de nos bières</string>
     <string name="One_vs_One">1 contre 1</string>
     <string name="One_vs_IA">1 contre IA</string>
     <string name="TeamA_vs_TeamB">Equipe A contre Equipe B</string>
-    <string name="OnevsOneOnline">1 contre 1 en ligne</string>
+    <string name="Beers">Bières</string>
     <string name="score">Score :</string>
     <string name="life">Vie(s) :</string>
     <string name="player">Joueur :</string>
@@ -15,6 +15,6 @@
     <string name="namePlayer">Lucie</string>
     <string name="nbLifes">2</string>
     <string name="scorePlayer">0</string>
-
-
+    <string name="nomAlc">Nom de la bière</string>
+    <string name="alcool">% Alcool</string>
 </resources>

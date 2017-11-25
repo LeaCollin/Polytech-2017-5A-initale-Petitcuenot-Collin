@@ -10,15 +10,19 @@
     android:paddingBottom="20dp"
     android:id="@+id/main">
 
-    <FrameLayout
-        android:layout_width="335dp"
-        android:layout_height="307dp"
-        android:background="@drawable/polytech" />
-
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/fragment"
         android:layout_width="348dp"
         android:layout_height="455dp"
-        />
+        >
+
+        <FrameLayout
+            android:id="@+id/background"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="335dp"
+            android:layout_height="307dp" />
+
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
