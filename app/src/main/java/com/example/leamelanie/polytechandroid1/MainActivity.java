@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,6 +22,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
+
+        FrameLayout background = (FrameLayout) findViewById(R.id.background);
+        background.setBackgroundResource(R.drawable.polytech);
 
         if (findViewById(R.id.fragment) != null) {
             final HomepageFrag homePage = new HomepageFrag();
@@ -75,12 +79,5 @@ public class MainActivity extends AppCompatActivity {
 
         // Commit changes.
         ft.commit();
-    }
-
-    public void goToQuestion(View v) {
-        showFragment(this.questionFrom);
-    }
-    public void goToBeer(View v) {
-        showFragment(this.beerFrag);
     }
 }
