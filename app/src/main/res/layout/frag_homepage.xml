@@ -31,7 +31,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/One_vs_IA"
                 android:layout_weight = "1"
-                android:onClick="goToQuestion"
                 android:layout_marginRight="5dp"
                 />
 
@@ -62,18 +61,18 @@
             android:paddingTop="100dp">
 
             <TextView
-                android:id="@+id/online"
+                android:id="@+id/title_beers"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/online"
+                android:text="@string/liste"
                 android:padding="20dp"/>
 
 
             <Button
-                android:id="@+id/one_vs_one_online"
+                android:id="@+id/beers"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/OnevsOneOnline"
+                android:text="@string/Beers"
                 />
         </LinearLayout>
 

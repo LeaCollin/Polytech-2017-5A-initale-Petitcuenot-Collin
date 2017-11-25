@@ -1,28 +1,30 @@
 package com.example.leamelanie.polytechandroid1;
 
-import android.app.ActionBar;
 import android.content.Intent;
-import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     private final QuestionFormFrag questionFrom = new QuestionFormFrag();
+    private final BeerFrag beerFrag = new BeerFrag();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
+
+        FrameLayout background = (FrameLayout) findViewById(R.id.background);
+        background.setBackgroundResource(R.drawable.polytech);
 
         if (findViewById(R.id.fragment) != null) {
             final HomepageFrag homePage = new HomepageFrag();
@@ -77,9 +79,5 @@ public class MainActivity extends AppCompatActivity {
 
         // Commit changes.
         ft.commit();
-    }
-
-    public void goToQuestion(View v) {
-        showFragment(this.questionFrom);
     }
 }

@@ -2,11 +2,11 @@
 <resources>
     <string name="app_name">PolyQuizz</string>
     <string name="offline">Offline</string>
-    <string name="online">Online</string>
+    <string name="liste">List of our beers</string>
     <string name="One_vs_One">1 vs 1</string>
     <string name="One_vs_IA">1 vs IA</string>
     <string name="TeamA_vs_TeamB">Team A vs Team B</string>
-    <string name="OnevsOneOnline">1 Vs 1 Online</string>
+    <string name="Beers">Beers</string>
     <string name="score">Score :</string>
     <string name="life">Life(s) :</string>
     <string name="player">Player :</string>
@@ -16,6 +16,6 @@
     <string name="namePlayer">Lucie</string>
     <string name="nbLifes">2</string>
     <string name="scorePlayer">0</string>
-
-
+    <string name="nomAlc">Name</string>
+    <string name="alcool">% Alcohol</string>
 </resources>
