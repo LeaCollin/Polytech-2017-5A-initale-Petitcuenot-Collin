@@ -1,13 +1,17 @@
 package com.example.leamelanie.polytechandroid1;
 
+import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.annotation.BoolRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +28,7 @@ public class QuestionFormFrag extends Fragment {
 
     private MyReceiver receiver;
     int score = 5;
+    int vies = 7;
     public Button butAnswer1 = null;
     public Button butAnswer2 = null;
     public Button butAnswer3 = null;
@@ -32,7 +37,6 @@ public class QuestionFormFrag extends Fragment {
     public class MyReceiver extends BroadcastReceiver {
 
         public static final String ACTION_RESP = "actionResp";
-
 
 
         @Override
@@ -69,21 +73,48 @@ public class QuestionFormFrag extends Fragment {
 
             Boolean myAnswer = intent.getBooleanExtra(MyIntentService.ANSWER, false);
             TextView textViewScore = getActivity().findViewById(R.id.scorePlayer);
+            TextView textViewVies = getActivity().findViewById(R.id.nbVies);
             if (myAnswer){
                 score ++;
                 textViewScore.setText(""+score);
+
+                AlertDialog ad = new AlertDialog.Builder(getActivity()).create();
+                ad.setCancelable(false);
+                ad.setMessage(getActivity().getString(R.string.winner));
+                ad.setButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(getActivity(), MainActivity.class);
+                        startActivity(intent);
+                    }
+                });
+                ad.show();
             }
             else{
                 score--;
+                vies--;
                 textViewScore.setText(""+score);
+                textViewVies.setText(""+vies);
+
+                if (vies == 0) {
+                    AlertDialog ad = new AlertDialog.Builder(getActivity()).create();
+                    ad.setCancelable(false);
+                    ad.setMessage(getActivity().getString(R.string.loser));
+                    ad.setButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent intent = new Intent(getActivity(), MainActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+                    ad.show();
+                }
 
             }
 
 
         }
     }
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -98,8 +129,10 @@ public class QuestionFormFrag extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        TextView textViewMyScore = getActivity().findViewById(R.id.scorePlayer);
-        textViewMyScore.setText(String.valueOf(score));
+        TextView textViewMonScore = getActivity().findViewById(R.id.scorePlayer);
+        TextView textViewMesVies = getActivity().findViewById(R.id.nbVies);
+        textViewMonScore.setText(String.valueOf(score));
+        textViewMesVies.setText(String.valueOf(vies));
         butAnswer1 = getActivity().findViewById(R.id.button1);
         butAnswer2 = getActivity().findViewById(R.id.button2);
         butAnswer3 = getActivity().findViewById(R.id.button3);
@@ -127,18 +160,22 @@ public class QuestionFormFrag extends Fragment {
 
                 switch (v.getId()){
                     case R.id.button1:
+                        getActivity().findViewById(R.id.button1).setClickable(false);
                         myIntent.putExtra(MyIntentService.TASK, butAnswer1.getText());
                         getActivity().startService(myIntent);
                         break;
                     case R.id.button2:
+                        getActivity().findViewById(R.id.button2).setClickable(false);
                         myIntent.putExtra(MyIntentService.TASK, butAnswer2.getText());
                         getActivity().startService(myIntent);
                         break;
                     case R.id.button3:
+                        getActivity().findViewById(R.id.button3).setClickable(false);
                         myIntent.putExtra(MyIntentService.TASK, butAnswer3.getText());
                         getActivity().startService(myIntent);
                         break;
                     case R.id.button4:
+                        getActivity().findViewById(R.id.button4).setClickable(false);
                         myIntent.putExtra(MyIntentService.TASK, butAnswer4.getText());
                         getActivity().startService(myIntent);
                         break;
@@ -161,9 +198,5 @@ public class QuestionFormFrag extends Fragment {
         IntentFilter filter = new IntentFilter(MyReceiver.ACTION_RESP);
         filter.addCategory(Intent.CATEGORY_DEFAULT);
         getActivity().registerReceiver(receiver, filter);
-    }
-
-    public void setOnClick(final Button btn){
-
     }
 }

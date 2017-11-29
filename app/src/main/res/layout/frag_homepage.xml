@@ -67,7 +67,6 @@
                 android:text="@string/liste"
                 android:padding="20dp"/>
 
-
             <Button
                 android:id="@+id/beers"
                 android:layout_width="match_parent"

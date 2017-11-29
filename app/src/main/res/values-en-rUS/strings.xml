@@ -18,4 +18,6 @@
     <string name="scorePlayer">0</string>
     <string name="nomAlc">Name</string>
     <string name="alcool">% Alcohol</string>
+    <string name="loser">No more lifes, you loose !</string>
+    <string name="winner">Good answer, you won !</string>
 </resources>

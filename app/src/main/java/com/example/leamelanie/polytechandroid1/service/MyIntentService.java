@@ -21,7 +21,7 @@ public class MyIntentService extends IntentService {
     public static final String ANSWERS = "answers";
 
 
-    public String nextQuestion = "Comment s'appelle la mascotte de Polyech Lyon ?";
+    public String nextQuestion = "Comment s'appelle la mascotte de Polytech Lyon ?";
     public String[] answers = {"Léo", "Lilou", "Lénonard","Lionel"};
 
     public MyIntentService() {

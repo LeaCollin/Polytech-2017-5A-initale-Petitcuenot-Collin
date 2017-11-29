@@ -21,4 +21,7 @@
     <string name="rep4">Lilou</string>
     <string name="nomAlc">Nom de la bière</string>
     <string name="alcool">% Alcool</string>
+    <string name="loser">Plus de vies... vous avez perdu !</string>
+    <string name="winner">Bonne réponse, vous avez gagné !</string>
+
 </resources>
